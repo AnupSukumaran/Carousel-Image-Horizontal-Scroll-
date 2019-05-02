@@ -44,6 +44,7 @@ class HorizontalScrollerView: UIView {
   
   func initializeScrollView() {
     scroller.delegate = self
+    scroller.showsHorizontalScrollIndicator = false
     addSubview(scroller)
     scroller.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
@@ -62,6 +63,7 @@ class HorizontalScrollerView: UIView {
     guard let index = contentViews.index(where: { $0.frame.contains(location)}) else { return }
     let centralView = contentViews[index]
     animateView(centralView, index)
+    
     self.delegate?.horizontalScrollerView(self, didSelectViewAt: index)
     self.scrollToView(at: index)
     
@@ -82,9 +84,11 @@ class HorizontalScrollerView: UIView {
   
   func scrollToView(at index: Int, animated: Bool = true) {
     let centralView = contentViews[index]
+    
     animateView(centralView, index)
     let targetCenter = centralView.center
     let targetOffsetX = targetCenter.x - (scroller.bounds.width / 2)
+    
     scroller.setContentOffset(CGPoint(x: targetOffsetX, y: 0), animated: animated)
   }
   
@@ -95,6 +99,7 @@ class HorizontalScrollerView: UIView {
   
   //MARK:
   func animateView(_ view: UIView,_ index: Int) {
+    
     animate {
       view.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
     }
@@ -103,7 +108,7 @@ class HorizontalScrollerView: UIView {
   
   //MARK:
   func animate(_ comp: @escaping () -> ()) {
-    UIView.animate(withDuration: 1) {
+    UIView.animate(withDuration: 0.3) {
       comp()
     }
   }
@@ -119,7 +124,8 @@ class HorizontalScrollerView: UIView {
       xValue += ViewConstants.Padding
       let view = dataSource.horizontalScrollerView(self, viewAt: index)
       view.frame = CGRect(x: CGFloat(xValue), y: bounds.midY - (ViewConstants.Dimensions / 2) , width: ViewConstants.Dimensions, height: ViewConstants.Dimensions)
-      
+      view.layer.cornerRadius = 50
+      view.clipsToBounds = true
       scroller.addSubview(view)
       xValue += ViewConstants.Dimensions + ViewConstants.Padding
       return view
@@ -133,14 +139,14 @@ class HorizontalScrollerView: UIView {
       size: CGSize(width: ViewConstants.Padding, height: bounds.height)
     )
     
-    guard let selectedIndex = contentViews.index(where: { $0.frame.intersects(centerRect) })
-      else { return }
+    guard let selectedIndex = contentViews.index(where: { $0.frame.intersects(centerRect) }) else { return }
     let centralView = contentViews[selectedIndex]
     animateView(centralView, selectedIndex)
     let targetCenter = centralView.center
     let targetOffsetX = targetCenter.x - (scroller.bounds.width / 2)
 
     scroller.setContentOffset(CGPoint(x: targetOffsetX, y: 0), animated: true)
+    
     delegate?.horizontalScrollerView(self, didSelectViewAt: selectedIndex)
   }
   
@@ -148,6 +154,20 @@ class HorizontalScrollerView: UIView {
 
 
 extension HorizontalScrollerView: UIScrollViewDelegate {
+
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    let centerRect = CGRect(
+      origin: CGPoint(x: scroller.bounds.midX - ViewConstants.Padding, y: 0),
+      size: CGSize(width: ViewConstants.Padding, height: bounds.height)
+    )
+    
+    guard let selectedIndex = contentViews.index(where: { $0.frame.intersects(centerRect) }) else { return }
+    let centralView = contentViews[selectedIndex]
+    animateView(centralView, selectedIndex)
+
+  }
   
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     if !decelerate {

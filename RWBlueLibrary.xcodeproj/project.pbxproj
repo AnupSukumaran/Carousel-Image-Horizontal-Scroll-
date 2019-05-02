@@ -10,6 +10,13 @@
 		0E1312C8227841D6003AB43A /* HorizontalScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1312C7227841D6003AB43A /* HorizontalScrollerView.swift */; };
 		0E1312CB227858FF003AB43A /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1312CA227858FF003AB43A /* NotificationExtension.swift */; };
 		0E1312CD22787267003AB43A /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E1312CC22787267003AB43A /* albums.json */; };
+		0EFA7CED227AFA780057D18A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA7CEC227AFA780057D18A /* ContainerViewController.swift */; };
+		0EFA7CEF227AFB7E0057D18A /* UIStoryboard+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA7CEE227AFB7E0057D18A /* UIStoryboard+Ext.swift */; };
+		0EFA7CF2227AFBF80057D18A /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA7CF1227AFBF80057D18A /* CenterViewController.swift */; };
+		0EFA7CF4227AFCD80057D18A /* ContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA7CF3227AFCD80057D18A /* ContainerViewModel.swift */; };
+		0EFA7CF6227B07A10057D18A /* ContainerViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA7CF5227B07A10057D18A /* ContainerViewController+Ext.swift */; };
+		0EFA7CF8227B219A0057D18A /* CenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA7CF7227B219A0057D18A /* CenterViewModel.swift */; };
+		0EFA7CFA227B233C0057D18A /* CenterViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA7CF9227B233C0057D18A /* CenterViewController+Ext.swift */; };
 		79F6FC411F14251800E22ED5 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F6FC401F14251800E22ED5 /* Album.swift */; };
 		79F6FC431F14254E00E22ED5 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F6FC421F14254E00E22ED5 /* AlbumView.swift */; };
 		79F6FC481F1557B800E22ED5 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F6FC471F1557B800E22ED5 /* LibraryAPI.swift */; };
@@ -26,6 +33,13 @@
 		0E1312C7227841D6003AB43A /* HorizontalScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollerView.swift; sourceTree = "<group>"; };
 		0E1312CA227858FF003AB43A /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		0E1312CC22787267003AB43A /* albums.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
+		0EFA7CEC227AFA780057D18A /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		0EFA7CEE227AFB7E0057D18A /* UIStoryboard+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Ext.swift"; sourceTree = "<group>"; };
+		0EFA7CF1227AFBF80057D18A /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		0EFA7CF3227AFCD80057D18A /* ContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewModel.swift; sourceTree = "<group>"; };
+		0EFA7CF5227B07A10057D18A /* ContainerViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContainerViewController+Ext.swift"; sourceTree = "<group>"; };
+		0EFA7CF7227B219A0057D18A /* CenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewModel.swift; sourceTree = "<group>"; };
+		0EFA7CF9227B233C0057D18A /* CenterViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CenterViewController+Ext.swift"; sourceTree = "<group>"; };
 		79F6FC401F14251800E22ED5 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		79F6FC421F14254E00E22ED5 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		79F6FC471F1557B800E22ED5 /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
@@ -54,9 +68,30 @@
 		0E1312C9227858DC003AB43A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0EFA7CEE227AFB7E0057D18A /* UIStoryboard+Ext.swift */,
 				0E1312CA227858FF003AB43A /* NotificationExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0EFA7CEB227AFA590057D18A /* ContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				0EFA7CEC227AFA780057D18A /* ContainerViewController.swift */,
+				0EFA7CF3227AFCD80057D18A /* ContainerViewModel.swift */,
+				0EFA7CF5227B07A10057D18A /* ContainerViewController+Ext.swift */,
+			);
+			path = ContainerView;
+			sourceTree = "<group>";
+		};
+		0EFA7CF0227AFBDA0057D18A /* CenterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0EFA7CF1227AFBF80057D18A /* CenterViewController.swift */,
+				0EFA7CF7227B219A0057D18A /* CenterViewModel.swift */,
+				0EFA7CF9227B233C0057D18A /* CenterViewController+Ext.swift */,
+			);
+			path = CenterViewController;
 			sourceTree = "<group>";
 		};
 		79F6FC441F15577D00E22ED5 /* Model */ = {
@@ -106,6 +141,8 @@
 		EDDF66141EBD28EF006123DA /* RWBlueLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				0EFA7CF0227AFBDA0057D18A /* CenterViewController */,
+				0EFA7CEB227AFA590057D18A /* ContainerView */,
 				0E1312C9227858DC003AB43A /* Extension */,
 				79F6FC461F15578700E22ED5 /* Controller */,
 				79F6FC451F15578300E22ED5 /* View */,
@@ -205,13 +242,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFA7CF8227B219A0057D18A /* CenterViewModel.swift in Sources */,
 				EDDF66181EBD28EF006123DA /* ViewController.swift in Sources */,
 				EDDF66371EBD2B8C006123DA /* HTTPClient.swift in Sources */,
+				0EFA7CED227AFA780057D18A /* ContainerViewController.swift in Sources */,
+				0EFA7CEF227AFB7E0057D18A /* UIStoryboard+Ext.swift in Sources */,
+				0EFA7CFA227B233C0057D18A /* CenterViewController+Ext.swift in Sources */,
 				0E1312C8227841D6003AB43A /* HorizontalScrollerView.swift in Sources */,
 				0E1312CB227858FF003AB43A /* NotificationExtension.swift in Sources */,
 				79F6FC481F1557B800E22ED5 /* LibraryAPI.swift in Sources */,
+				0EFA7CF4227AFCD80057D18A /* ContainerViewModel.swift in Sources */,
+				0EFA7CF6227B07A10057D18A /* ContainerViewController+Ext.swift in Sources */,
 				EDDF66161EBD28EF006123DA /* AppDelegate.swift in Sources */,
 				79F6FC431F14254E00E22ED5 /* AlbumView.swift in Sources */,
+				0EFA7CF2227AFBF80057D18A /* CenterViewController.swift in Sources */,
 				79F6FC411F14251800E22ED5 /* Album.swift in Sources */,
 				79F6FC4A1F1557E400E22ED5 /* PersistencyManager.swift in Sources */,
 			);
